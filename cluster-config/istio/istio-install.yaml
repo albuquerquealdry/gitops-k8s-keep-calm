@@ -19974,12 +19974,12 @@ metadata:
     istio.io/rev: default
     operator.istio.io/component: EgressGateways
     release: istio
-  name: istio-egressgateway
+  name: istio-egressgateway-kardec
   namespace: istio-system
 spec:
   selector:
     matchLabels:
-      app: istio-egressgateway
+      app: istio-egressgateway-kardec
       istio: egressgateway
   strategy:
     rollingUpdate:
