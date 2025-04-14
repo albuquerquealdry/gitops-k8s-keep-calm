@@ -19974,7 +19974,7 @@ metadata:
     istio.io/rev: default
     operator.istio.io/component: EgressGateways
     release: istio
-  name: istio-egressgateway-kardec
+  name: istio-egressgateway
   namespace: istio-system
 spec:
   selector:
