@@ -19979,7 +19979,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: istio-egressgateway-kardec
+      app: istio-egressgateway
       istio: egressgateway
   strategy:
     rollingUpdate:
