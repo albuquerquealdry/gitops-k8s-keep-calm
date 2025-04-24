@@ -24,3 +24,10 @@ spec:
       selector: 'k8s-app == "kube-dns"'
       ports:
       - 53
+  egress:
+  - action: Allow
+    protocol: TCP
+    destination:
+      selector: 'k8s-app == "istiod"'
+      ports:
+      - 15010
