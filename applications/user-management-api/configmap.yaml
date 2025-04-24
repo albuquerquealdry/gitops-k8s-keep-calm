@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: user-management-api-cm
+  namespace: mockbank
+data:
+  DB_USER: root
+  DB_PASS: 12345
+  DB_HOST: mysql-0.mysql.database.svc.cluster.local
+  DB_PORT: 3306
+  DB_NAME: mockbankaldry1303/user-management-api

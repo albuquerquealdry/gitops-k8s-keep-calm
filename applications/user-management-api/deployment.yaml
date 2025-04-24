@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-management-api
+  namespace: mockbank
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: user-management-api
+  template:
+    metadata:
+      labels:
+        app: user-management-api
+    spec:
+      containers:
+      - name: user-management-api
+        image: aldry1303/user-management-api:0.0.2
+        ports:
+        - containerPort: 8080
+        env:
+        - name: DB_USER
+          valueFrom:
+            configMapKeyRef:
+              name: user-management-api-cm
+              key: DB_USER
+        - name: DB_PASS
+          valueFrom:
+            configMapKeyRef:
+              name: user-management-api-cm
+              key: DB_PASS
+        - name: DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: user-management-api-cm
+              key: DB_HOST
+        - name: DB_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: user-management-api-cm
+              key: DB_PORT
+        - name: DB_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: user-management-api-cm
+              key: DB_NAME
