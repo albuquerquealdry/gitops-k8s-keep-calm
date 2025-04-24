@@ -7,6 +7,10 @@ spec:
   types:
   - Ingress
   - Egress
+  ingress:
+  - action: Allow
+    source:
+      nodeSelector: 'node-role.kubernetes.io/worker == ""'
   egress:
   - action: Allow
     protocol: UDP
