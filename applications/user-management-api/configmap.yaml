@@ -8,4 +8,4 @@ data:
   DB_PASS: "12345"
   DB_HOST: mysql-0.mysql.database.svc.cluster.local
   DB_PORT: "3306"
-  DB_NAME: mockbankaldry1303/user-management-api
+  DB_NAME: mockbank
