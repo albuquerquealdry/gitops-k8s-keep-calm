@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: user-management-api
-        image: aldry1303/user-management-api:0.0.5
+        image: aldry1303/user-management-api:0.0.6
         ports:
         - containerPort: 8080
         env:
@@ -44,3 +44,16 @@ spec:
             configMapKeyRef:
               name: user-management-api-cm
               key: DB_NAME
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        
+        readinessProbe:
+          httpGet:
+            path: /readyz
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 10
