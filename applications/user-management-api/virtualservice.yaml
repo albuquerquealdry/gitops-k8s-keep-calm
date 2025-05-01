@@ -13,7 +13,7 @@ spec:
     - uri:
         prefix: /api
     rewrite:
-      uri: /
+      uri: "/${1}"
     route:
     - destination:
         host: user-management-api-service.mockbank.svc.cluster.local
