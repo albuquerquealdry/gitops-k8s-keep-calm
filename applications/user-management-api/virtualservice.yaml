@@ -1,0 +1,19 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: user-management-api-service-vs
+  namespace: mockbank
+spec:
+  hosts:
+  - "mockbank.bananacake.io"
+  gateways:
+  - mockbank-gateway
+  http:
+  - match:
+    - uri:
+        prefix: /api
+    route:
+    - destination:
+        host: user-management-api-service.mockbank.svc.cluster.local
+        port:
+          number: 8080
