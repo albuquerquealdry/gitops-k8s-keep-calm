@@ -12,6 +12,8 @@ spec:
   - match:
     - uri:
         prefix: /api
+    rewrite:
+      uri: /readyz
     route:
     - destination:
         host: user-management-api-service.mockbank.svc.cluster.local
