@@ -1965,8 +1965,7 @@ spec:
         - key: "type"
           operator: "Equal"
           value: "monitoring"
-          effect: "NoSchedule"
-
+          effect: "NoExecute"
       volumes:
         - name: config
           configMap:
