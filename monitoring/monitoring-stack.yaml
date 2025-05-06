@@ -1961,6 +1961,12 @@ spec:
             httpGet:
               path: /api/health
               port: 3000
+      tolerations:
+        - key: "type"
+          operator: "Equal"
+          value: "monitoring"
+          effect: "NoSchedule"
+
       volumes:
         - name: config
           configMap:
