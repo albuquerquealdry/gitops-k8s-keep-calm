@@ -2069,6 +2069,11 @@ spec:
             drop:
             - ALL
           readOnlyRootFilesystem: true
+      tolerations:
+        - key: "type"
+          operator: "Equal"
+          value: "monitoring"
+          effect: "NoExecute"
 ---
 # Source: kube-prometheus-stack/templates/prometheus-operator/deployment.yaml
 apiVersion: apps/v1
@@ -2184,6 +2189,11 @@ spec:
       serviceAccountName: monitoring-kube-prometheus-operator
       automountServiceAccountToken: true
       terminationGracePeriodSeconds: 30
+      tolerations:
+        - key: "type"
+          operator: "Equal"
+          value: "monitoring"
+          effect: "NoExecute"
 ---
 # Source: kube-prometheus-stack/templates/alertmanager/alertmanager.yaml
 apiVersion: monitoring.coreos.com/v1
@@ -2325,6 +2335,11 @@ spec:
   podMonitorSelector:
     matchLabels:
       release: "monitoring"
+  tolerations:
+    - key: "type"
+      operator: "Equal"
+      value: "monitoring"
+      effect: "NoExecute"
 
   podMonitorNamespaceSelector: {}
   probeSelector:
