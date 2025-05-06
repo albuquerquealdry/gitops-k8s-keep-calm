@@ -2335,11 +2335,6 @@ spec:
   podMonitorSelector:
     matchLabels:
       release: "monitoring"
-  tolerations:
-    - key: "type"
-      operator: "Equal"
-      value: "monitoring"
-      effect: "NoExecute"
 
   podMonitorNamespaceSelector: {}
   probeSelector:
