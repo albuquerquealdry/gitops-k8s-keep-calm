@@ -1,7 +1,7 @@
 apiVersion: projectcalico.org/v3
 kind: NetworkPolicy
 metadata:
-  name: default.allow-egress-from-mockbank-to-database-port-80
+  name: default.allow-egress-from-mockbank-to-database-port-3306
   namespace: mockbank
 spec:
   selector: all() 

@@ -1,7 +1,7 @@
 apiVersion: projectcalico.org/v3
 kind: NetworkPolicy
 metadata:
-  name: default.allow-mockbank-to-database-only-port-80
+  name: default.allow-mockbank-to-database-only-port-3306
   namespace: database
 spec:
   selector: all()
@@ -10,6 +10,7 @@ spec:
       protocol: TCP
       source:
         namespaceSelector: 'projectcalico.org/name == "mockbank"'
+        selector: app == "user-management-api"
       destination:
         ports:
           - 3306

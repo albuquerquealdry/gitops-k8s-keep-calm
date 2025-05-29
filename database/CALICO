@@ -1,0 +1,3 @@
+iptables -S | grep default.deny-all-policy
+
+iptables -L cali-po-_sn6iZv2YYgHl2aRBDTL -n -v

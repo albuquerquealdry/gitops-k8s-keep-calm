@@ -3,14 +3,10 @@ kind: GlobalNetworkPolicy
 metadata:
   name: default.deny-all-policy
 spec:
-  namespaceSelector: has(projectcalico.org/name) && projectcalico.org/name not in {"kube-system", "calico-system", "tigera-system", "argocd", "istio-system"}
+  namespaceSelector: has(projectcalico.org/name) && projectcalico.org/name not in {"kube-system", "calico-system", "tigera-system", "argocd", "istio-system", "monitoring"}
   types:
   - Ingress
   - Egress
-  ingress:
-  - action: Allow
-    source:
-      nodeSelector: 'node-role.kubernetes.io/worker == ""'
   egress:
   - action: Allow
     protocol: UDP
